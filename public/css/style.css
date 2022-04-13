@@ -1,0 +1,209 @@
+@import url('montserrat.css');
+@import url('ld-spin.css');
+@import url('ld-bars.css');
+
+html, body {
+  margin: 0px;
+  padding: 0px;
+  height: 100%;
+}
+html {
+  background: url('../assets/living_room02.png') no-repeat 0 0;
+  background-size: cover;
+}
+body {
+  font-family: "Montserrat", sans-serif;
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+  width: 100%;
+}
+
+.unselectable {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+/***************************
+         TELEVISION
+***************************/
+.television {
+  position: relative;
+  max-width: 1500px;
+  min-width: 1000px;
+  margin: 30px auto;
+
+  width: 100%;
+  box-sizing: border-box;
+}
+.television > img {
+  width: 100%;
+}
+.television .player {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+
+  z-index: 5;
+}
+.television .player:after {
+  content: "";
+  padding: 10px 50%;
+  max-width: 400px;
+  box-shadow: 0px 0px 15px black;
+  position: absolute;
+  bottom: -50px;
+  left: 0px;
+  background: rgba(0,0,0,0.5);
+  border-radius: 50%;
+}
+.television .player .logo {
+  margin: 20% auto;
+  cursor: default;
+}
+.television .player .logo img {
+  width: 400px;
+}
+.television .player .logo p {
+  color: #ccc;
+  font-size: 18px;
+  opacity: 0;
+
+  -webkit-animation: fade-in-out 2s 0s infinite ease;
+  animation: fade-in-out 2s 0s infinite ease;
+}
+
+/***************************
+        TOP DETAILS
+***************************/
+.television .player .details {
+  position: absolute;
+  top: 5%;
+  left: 3%;
+  width: 94%;
+
+  background: rgba(0,0,0,0.8);
+  text-align: left;
+  cursor: default;
+  height: 55px;
+  overflow: hidden;
+
+  transition: 0.2s all;
+  z-index: 20;
+}
+.television .player .details.hidden {
+  height: 0px;
+}
+.television .player .channel-details {
+  color: white;
+  text-shadow: 0px 0px 1px black;
+  padding-left: 10px;
+}
+.television .player .show-details {
+  font-size: 30px;
+  color: white;
+  text-shadow: 0px 0px 1px black;
+  float: right;
+  padding-top: 10px;
+  padding-right: 10px;
+  max-width: 40%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.television .player .channel-details .number{
+  font-size: 42px;
+}
+.television .player .channel-details .name {
+  color: #ccc;
+  font-style: italic;
+  text-transform: uppercase;
+  padding-right: 10px;
+  font-size: 28px;
+}
+.television .player embed,
+.television .player iframe {
+  position: absolute;
+  top: 5%;
+  left: 3%;
+  width: 94%;
+  height: 85%;
+  box-shadow: 0px 0px 2px black;
+
+  z-index: 15;
+}
+
+/***************************
+      BOTTOM TOGGLES
+***************************/
+.toggles .media-toggle {
+  position: absolute;
+  bottom: 1%;
+  font-size: 60px;
+  color: #aaa;
+  z-index: 10;
+  vertical-align: middle;
+  text-shadow: 0px 1px 1px #333;
+
+  transition: 0.2s all;
+}
+.toggles .media-toggle:not(.loading):hover {
+  color: white;
+  cursor: pointer;
+
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+.toggles .prev-channel {
+  left: 30%;
+}
+.toggles .next-channel {
+  right: 30%;
+}
+.toggles .prev-show {
+  left: 35%;
+}
+.toggles .next-show {
+  right: 35%;
+}
+.toggles .loading {
+  left: 100px;
+  bottom: 40px;
+}
+.toggles img {
+  vertical-align: middle;
+  position: absolute;
+  left: 50%;
+  bottom: 3%;
+  margin-left: -75px;
+  opacity: 0.8;
+}
+
+/***************************
+         ANIMATIONS
+***************************/
+@-webkit-keyframes fade-in-out {
+  0%, 100% { opacity: 0; }
+  50%, 80% { opacity: 1; }
+}
+@keyframes fade-in-out {
+  0%, 100% { opacity: 0; }
+  50%, 80% { opacity: 1; }
+}
+
+/***************************
+           MEDIA
+***************************/
+@media(max-width: 1200px) {
+  .television {
+    margin-top: 10%;
+  }
+  .television .loading {
+    bottom: 30px;
+  }
+}

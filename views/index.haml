@@ -1,0 +1,32 @@
+!!!
+
+%html
+  %head
+    %link{:rel => "stylesheet", :type => "text/css", :href => "https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"}
+    %link{:rel => "stylesheet", :type => "text/css", :href => "css/style.css"}
+    %script{:src => "https://www.youtube.com/iframe_api"}
+    %script{:src => "https://code.jquery.com/jquery-1.11.3.min.js"}
+    %script{:src => "js/script.js"}
+  %body.unselectable
+    .television
+      %img{:src => "assets/tv3.jpg"}
+      .player
+        .logo
+          %img{:src => 'assets/rclogo.png'}
+          %p Loading your channels...
+        .details
+          %span.channel-details
+            %span.number= channel_number
+            %span.name= channel_name
+          %span.show-details
+            %span.name= show_name
+            %span.duration
+        #video
+      .toggles
+        .loading.media-toggle
+          .ld.ld-bars
+        %i.prev-channel.media-toggle.fa.fa-angle-double-left
+        %i.prev-show.media-toggle.fa.fa-caret-left
+        %img{:src => "assets/rclogo.png", :width => 150}
+        %i.next-show.media-toggle.fa.fa-caret-right
+        %i.next-channel.media-toggle.fa.fa-angle-double-right
